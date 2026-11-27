@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "ChatGPT to Auto Studio",
+  "version": "1.0.1",
+  "description": "Send a selected ChatGPT answer to the local Auto Studio review queue.",
+  "permissions": ["storage"],
+  "host_permissions": [
+    "https://chatgpt.com/*",
+    "https://chat.openai.com/*",
+    "http://127.0.0.1:8769/*"
+  ],
+  "background": { "service_worker": "service_worker.js" },
+  "options_page": "options.html",
+  "content_scripts": [{
+    "matches": ["https://chatgpt.com/*", "https://chat.openai.com/*"],
+    "js": ["content.js"],
+    "run_at": "document_idle"
+  }]
+}

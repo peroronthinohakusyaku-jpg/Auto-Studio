@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ChatGPT to Auto Studio</title>
+  <style>
+    body { max-width: 620px; margin: 40px auto; padding: 0 20px; background: #151619; color: #eee; font: 15px system-ui, sans-serif; }
+    input, button { box-sizing: border-box; padding: 10px; border-radius: 7px; border: 1px solid #444; }
+    input { width: 100%; margin: 8px 0 14px; background: #202126; color: #fff; }
+    button { background: #d7865a; color: #211811; cursor: pointer; font-weight: 700; }
+    #status { min-height: 1.5em; color: #bbb; }
+  </style>
+</head>
+<body>
+  <h1>ChatGPT Web → Auto Studio</h1>
+  <p>Auto Studioの「ChatGPT Web連携」画面に表示されたペアリングコードを入力します。</p>
+  <label for="pairingCode">ペアリングコード</label>
+  <input id="pairingCode" type="password" autocomplete="off" spellcheck="false">
+  <button id="save">保存して接続確認</button>
+  <p id="status" role="status"></p>
+  <p>通常はChatGPTの回答に追加される「Auto Studioへ送る」ボタンで手動転送します。自動往復はAuto Studio本体の「ChatGPT自動往復」を有効にした場合だけ動作し、ChatGPT回答内の <code>[AUTO_STUDIO_TASK]指示[/AUTO_STUDIO_TASK]</code> をGooseへ送り、処理結果を同じChatGPTタブに自動送信します。</p>
+  <script src="options.js"></script>
+</body>
+</html>
